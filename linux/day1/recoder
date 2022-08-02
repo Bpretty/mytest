@@ -1,0 +1,23 @@
+uname -a    内核版本
+cat /etc/issu   系统本身版本
+
+linux 个别补丁才需要重启操作系统
+
+
+
+安装软件
+
+sudo apt install ssh
+
+ps -elf|grep ssh  如果存在sshd -D进程，说明安装成功
+
+sudo apt install vim
+
+输入vim命令，有显示，就代表装好了
+
+ifconfig
+
+
+
+
+远程禁止root登录
