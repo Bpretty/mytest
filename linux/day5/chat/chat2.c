@@ -30,6 +30,11 @@ int main( int argc, char* argv[])
             {
                 memset(buff, 0, sizeof(buff));
                 ret = read(STDIN_FILENO, buff, sizeof(buff) );
+                if (ret ==0)
+                {
+                    printf("退出标准输入，关闭聊天\n");
+                    break;
+                }
                 //ret = read(STDIN_FILENO, buff, strlen(buff)-1 );
                 //printf("从标准输入读取字符：%d\n", ret);
                 write( fdW, buff, strlen(buff)-1 );
