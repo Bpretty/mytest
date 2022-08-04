@@ -18,4 +18,25 @@ passwd功能是通过有效用户id+真实用户id实现的
 只有目录拥有者和文件创建者可以删除，其他人只能删除自己的文件。如目录/tmp下   chmod 0+t file
 
 
+看CPU信息   cat /proc/cpuinfo
+nginx启动进程数是cpu核数的两倍
+ps查看进程状态使用的是采样
+
+用户态通过系统调用或者中断进入内核态
+
+进程状态
+R   运行
+S   睡眠
+Z   暂停
+T   僵尸
+
+ps -elf
+uid为有效用户id
+PRI 为优先级，值越大优先级越低
+TIME 累计运行时间
+
+ps -aux 
+主要看cpu和内存占用率
+
+free 看物理内存
 
