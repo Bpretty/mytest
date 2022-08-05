@@ -86,7 +86,26 @@ status 是传出参数，返回子进程的退出状态。
 main函数的自然返回
 调用exit函数        在子函数中希望进程结束，应该使用exit，而不return
 调用exit_函数
-调用abort函数
+调用abort函数       程序会被6号信号打断，会生成core文件
 接收到能导致进程终止的信号，如：ctrl+c SIGINT，ctrl+\ SIGOUT
 
+前面三种是同步退出，后来两种是异步退出
 
+echo $?     查看运行后的函数返回值
+
+
+exit和exit_
+_exit直接调用exit系统调用
+exit先调用退出处理函数，再刷新i/o缓存，最后再调用exit系统调用
+
+程序崩溃的时候不会帮你输出缓冲区
+linux下文件缓冲区写入磁盘使用 fsync
+
+
+守护进程
+Daemon运行在后台，也叫“后台服务进程”
+
+进程和服务的关系
+进程就是服务
+
+linux后台服务进程，名字一般有个d，如：mysqld
