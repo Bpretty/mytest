@@ -1,0 +1,21 @@
+-------------------------
+GDB
+
+b main
+r
+n
+s
+finish
+info b
+bt  调用堆栈
+x /20xb p  查看内存  x /20xw
+c
+
+调试core文件
+
+1、ulimit -c unlimited
+2、gcc -g main.c 
+3、./a.out 
+4、gdb a.out core
+
+-------------------------
