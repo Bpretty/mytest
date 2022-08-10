@@ -15,7 +15,7 @@ int main( int argc, char* argv[] )
     int ret = bind( socketFd, (struct sockaddr*)&serverAddr, sizeof(serverAddr) );
     ERROR_CHECK( ret, -1, "bind" );
 
-    ret = listen( socketFd, 0);
+    ret = listen( socketFd, 10);
     ERROR_CHECK( ret, -1, "listen" );
 
     struct sockaddr_in clientAddr;
