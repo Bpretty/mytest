@@ -34,26 +34,29 @@ int main( int argc, char* argv[] )
     tcpInit( &socketFd, argv[1], argv[2] );
 
     struct sockaddr_in clientAddr;
-    bzero( &clientAddr, sizeof(struct sockaddr_in) );
-    int addrLen = sizeof(clientAddr);
-    int newFd = accept( socketFd, (struct sockaddr*)&clientAddr, &addrLen );
-    printf( "client ip = %s, client port = %d\n", inet_ntoa(clientAddr.sin_addr), ntohs(clientAddr.sin_port) );
-    ERROR_CHECK( newFd, -1, "accept" );
+    int newFd;
 
     int readFdNums, ret;
+    //int maxFlag = newFd + 1;
+    int maxFlag = 15;
     char buf[128] = {0};
+    fd_set fds, originalFds;
+    FD_ZERO(&fds);
+    FD_SET(STDIN_FILENO, &originalFds);
+    FD_SET(socketFd, &originalFds);
+
     while(1)
     {
-        fd_set fds;
         FD_ZERO(&fds);
-        FD_SET(STDIN_FILENO, &fds);
-        FD_SET(newFd, &fds);
-        FD_SET(socketFd, &fds);
+        memcpy(&fds, &originalFds, sizeof(fd_set));
 
-        readFdNums = select( newFd+1, &fds, NULL, NULL, NULL );
+        readFdNums = select( maxFlag, &fds, NULL, NULL, NULL );
         if (readFdNums > 0){
+            //printf("描述符有%d个可读的\n", readFdNums);
+
             if ( FD_ISSET(STDIN_FILENO, &fds) )
             {
+                //printf("标准输入可读\n");
                 memset( buf, 0, sizeof(buf) ); 
                 ret = read(STDIN_FILENO, buf, sizeof(buf) - 1); //避免越界
                 ret = send( newFd, buf, strlen(buf)-1, 0 );
@@ -61,31 +64,45 @@ int main( int argc, char* argv[] )
 
             if ( FD_ISSET(newFd, &fds) )
             {
+                //printf("newFd可读\n");
                 memset( buf, 0, sizeof(buf) ); 
                 ret = recv( newFd, buf, sizeof(buf), 0);
                 if (ret == 0)
                 {
                     printf("byebye\n");
-                    FD_CLR(newFd, &fds);
                     close(newFd);
-                    break;
+                    FD_CLR(newFd, &originalFds);
+                }else{
+                    printf("%s\n", buf);
                 }
-                printf("%s\n", buf);
             }
 
             if ( FD_ISSET(socketFd, &fds) )
             {
                 printf("新的连接来了\n");
+
+                bzero( &clientAddr, sizeof(struct sockaddr_in) );
+                int addrLen = sizeof(clientAddr);
+                newFd = accept( socketFd, (struct sockaddr*)&clientAddr, &addrLen );
+                printf( "client ip = %s, client port = %d\n", inet_ntoa(clientAddr.sin_addr), ntohs(clientAddr.sin_port) );
+                ERROR_CHECK( newFd, -1, "accept" );
+                
+                FD_SET(newFd, &originalFds );
             }
 
         }else{
+            if (readFdNums == -1)
+            {
+                printf("select失败\n");
+                exit(-1);
+            }
+            printf("no value\n");
         }
 
     }
 
     printf("跳出循环\n");
 
-    close( newFd );
     close( socketFd);
 
     return 0;

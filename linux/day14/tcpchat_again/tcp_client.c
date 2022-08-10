@@ -15,7 +15,9 @@ int main( int argc, char* argv[] )
     serverAddr.sin_addr.s_addr = inet_addr( argv[1] );
 
     int ret = connect( socketFd, (struct sockaddr*)&serverAddr, sizeof(serverAddr) );
-    ERROR_CHECK( ret, -1, "bind" );
+    ERROR_CHECK( ret, -1, "connect" );
+
+    printf("连接成功，准备监听描述符\n");
 
     int readFdNums;
     char buf[128] = {0};
@@ -28,8 +30,10 @@ int main( int argc, char* argv[] )
 
         readFdNums = select( socketFd+1, &fds, NULL, NULL, NULL );
         if (readFdNums > 0){
+            //printf("有描述符\n");
             if ( FD_ISSET(STDIN_FILENO, &fds) )
             {
+                //printf("标准输入\n");
                 memset( buf, 0, sizeof(buf) ); 
                 ret = read(STDIN_FILENO, buf, sizeof(buf) - 1); //避免越界
                 ret = send( socketFd, buf, strlen(buf)-1, 0 );
@@ -37,6 +41,7 @@ int main( int argc, char* argv[] )
 
             if ( FD_ISSET(socketFd, &fds) )
             {
+                //printf("socket可读\n");
                 memset( buf, 0, sizeof(buf) ); 
                 ret = recv( socketFd, buf, sizeof(buf), 0);
                 if (ret ==0)
