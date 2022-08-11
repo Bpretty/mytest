@@ -11,7 +11,7 @@ int main( int argc, char* argv[] )
     bzero( &serverAddr, sizeof(serverAddr) );
     serverAddr.sin_family = AF_INET;
     short nport = atoi( argv[2] );
-    serverAddr.sin_port = nport;
+    serverAddr.sin_port = htons( nport );
     serverAddr.sin_addr.s_addr = inet_addr( argv[1] );
 
     int ret = connect( socketFd, (struct sockaddr*)&serverAddr, sizeof(serverAddr) );

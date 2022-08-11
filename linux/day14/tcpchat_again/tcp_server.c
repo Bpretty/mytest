@@ -13,7 +13,7 @@ int tcpInit( int* Fd, char* addr, char* port )
     bzero( &serverAddr, sizeof(serverAddr) );
     serverAddr.sin_family = AF_INET;
     short nport = atoi(port);
-    serverAddr.sin_port = nport;
+    serverAddr.sin_port = htons(nport);
     serverAddr.sin_addr.s_addr = inet_addr(addr);
     ret = bind( socketFd, (struct sockaddr*)&serverAddr, sizeof(serverAddr) );
     ERROR_CHECK( ret, -1, "bind" );
