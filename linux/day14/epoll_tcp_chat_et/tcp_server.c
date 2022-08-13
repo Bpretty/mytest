@@ -56,7 +56,7 @@ int main( int argc, char* argv[] )
     while(1)
     {
         readFdNums = epoll_wait( epfd, evs, 3, -1 );
-        for(i=0; i< 3;i++)
+        for(i=0; i< readFdNums;i++)
         {
 
             if ( evs[i].data.fd == STDIN_FILENO )

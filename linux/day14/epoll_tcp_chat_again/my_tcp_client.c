@@ -33,7 +33,7 @@ int main( int argc, char* argv[] )
                 memset( buf, 0, sizeof(buf) ); 
                 ret = read(STDIN_FILENO, buf, sizeof(buf) - 1); //避免越界
                 ret = send( socketFd, buf, strlen(buf)-1, 0 );
-                printf("client send data：%d\n", ret);
+                //printf("client send data：%d\n", ret);
             }
 
             if ( FD_ISSET(socketFd, &fds) )

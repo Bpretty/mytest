@@ -49,7 +49,8 @@ int main( int argc, char* argv[] )
     while(1)
     {
         readFdNums = epoll_wait( epfd, evs, 3, -1 );
-        for(i=0; i< 3;i++)
+
+        for(i=0; i< readFdNums; i++)
         {
 
             if ( evs[i].data.fd == STDIN_FILENO )
@@ -66,9 +67,9 @@ int main( int argc, char* argv[] )
 
             if ( evs[i].data.fd == newFd )
             {
-                printf("newFd 可读\n");
                 memset( buf, 0, sizeof(buf) ); 
                 ret = recv( newFd, buf, sizeof(buf), 0);
+
                 if (ret == 0)
                 {
                     // 
@@ -87,7 +88,7 @@ int main( int argc, char* argv[] )
 
             if (evs[i].data.fd == socketFd)
             {
-                printf("新的连接来了\n");
+
                 bzero( &clientAddr, sizeof(struct sockaddr_in) );
                 int addrLen = sizeof(clientAddr);
                 newFd = accept( socketFd, (struct sockaddr*)&clientAddr, &addrLen );
