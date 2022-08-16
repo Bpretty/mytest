@@ -34,7 +34,7 @@ public:
 
         if ( this == &str ) return *this;
 
-        delete _pStr;
+        delete[] _pStr;
         _pStr = new char[strlen( str._pStr ) + 1]();
         strcpy( _pStr, str._pStr );
     }
@@ -45,7 +45,7 @@ public:
 
         if ( _pStr != nullptr )
         {
-            delete _pStr;
+            delete[] _pStr;
             _pStr = nullptr;
         }
     }
