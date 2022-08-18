@@ -19,3 +19,13 @@ c
 4、gdb a.out core
 
 -------------------------
+动态库制作，以 add.c 为例
+
+gcc -fIPC -Wall -c add.c
+gcc -shared add.o -o libadd.so
+制作的动态库 libadd.so 移动至 /usr/lib 或者 /lib
+gcc main.c -o main -ladd  //链接动态库
+
+note：动态库或者静态库名字有严格要求，如果要制作的库名为 name，则，
+静态库名    libname.a
+动态库名    libname.so
