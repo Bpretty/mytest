@@ -16,7 +16,7 @@ c
 1、ulimit -c unlimited
 2、gcc -g main.c 
 3、./a.out 
-4、gdb a.out core
+4、gdb a.out core   // 调试core文件, 普通程序（有调试信息的）调试使用 gdb a.out
 
 -------------------------
 动态库制作，以 add.c 为例

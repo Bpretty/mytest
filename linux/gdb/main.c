@@ -8,12 +8,21 @@ void t()
     }
 }
 
+void t1()
+{
+    int a = 1;
+    int b = a/0;
+
+    printf("b\n");
+}
+
 int main()
 {
     int a = 1;
     int b = 1;
     int arr[3] = {1,2,3};
 
+    t1();
     t();
 
     return 0;
