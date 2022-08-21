@@ -2,6 +2,8 @@
 #include <iostream>
 
 // 非递归遍历实现均为伪代码
+// 代码实现参考自：https://blog.csdn.net/sinat_38812250/article/details/89464214
+// 后续遍历还可参考面试宝典 p220
 
 // 非递归前序遍历 
 void Preorder( pNode p )
