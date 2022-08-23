@@ -53,12 +53,56 @@ void t3()
     cout<< sizeof(Demo3);
 }
 
+class Demo4
+{
+    char a;
+    short b;
+    short c;
+};
+
+void t4()
+{
+    cout<< sizeof(Demo4)<<endl;
+}
+
+class Demo5
+{
+    int b;
+    double c;
+};
+
+void t5()
+{
+    cout<< sizeof(Demo5)<<endl;
+}
+
+class S3
+{
+    int b;
+    char a;
+    //int b;
+};
+
+class S4
+{
+    char a;
+    S3 b;   // 注意类成员另起一个重新对齐的位置计算
+    char c;
+};//16
+
+void t6()
+{
+    cout<< sizeof(S4)<<endl;
+}
+
 
 int main()
 {
     //t2();
-    t3();
+    //t3();
+    //t4();
+    //t5();
+    t6();
 
     return 0;
 }
-
