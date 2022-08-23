@@ -1,0 +1,3 @@
+chattr +i file  // 添加不能删除的属性
+chattr -i file  // 删除不能删除的属性
+lasttr file     // 查看隐藏属性
