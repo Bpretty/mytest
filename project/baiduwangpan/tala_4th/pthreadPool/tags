@@ -1,0 +1,129 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARGS_CHECK	head.h	31;"	d
+CD	head.h	/^    CD, $/;"	e	enum:commmandToken
+DEFAULT_DIR	head.h	38;"	d
+DEFAULT_PATH	head.h	37;"	d
+ELF	Makefile	/^ELF:=pthreadPoolServer$/;"	m
+ERROR_CHECK	head.h	32;"	d
+ERROR_PASSWORD	head.h	/^    ERROR_PASSWORD,$/;"	e	enum:MSG
+ERROR_PATH	head.h	/^    ERROR_PATH,$/;"	e	enum:MSG
+ERROR_USERNAME	head.h	/^    ERROR_USERNAME,$/;"	e	enum:MSG
+FILENAME	head.h	35;"	d
+GETS	head.h	/^    GETS,$/;"	e	enum:commmandToken
+LS	head.h	/^    LS, $/;"	e	enum:commmandToken
+MAXFDNUM	factory.h	5;"	d
+MKDIR	head.h	/^    MKDIR,$/;"	e	enum:commmandToken
+MSG	head.h	/^enum MSG{$/;"	g
+MV	head.h	/^    MV, $/;"	e	enum:commmandToken
+NO_SUCH_FILE	head.h	/^    NO_SUCH_FILE$/;"	e	enum:MSG
+Node	workQueue.h	/^}Node,*pNode;$/;"	t	typeref:struct:tagNode
+OBJS	Makefile	/^OBJS:=$(SRCS:%.c=%.o)$/;"	m
+OPERATE_SUCCESS	head.h	/^    OPERATE_SUCCESS,$/;"	e	enum:MSG
+PTHREAD_RET_CHECK	head.h	33;"	d
+PUTS	head.h	/^    PUTS$/;"	e	enum:commmandToken
+PWD	head.h	/^    PWD,$/;"	e	enum:commmandToken
+RM	head.h	/^    RM,                                                                                                                                         $/;"	e	enum:commmandToken
+SALTLEN	head.h	36;"	d
+SRCS	Makefile	/^SRCS:=$(wildcard *.c)$/;"	m
+SWAP	head.h	34;"	d
+__FACTORY_H__	factory.h	2;"	d
+__HEAD_H__	head.h	2;"	d
+__MYSQLINIT_H__	mysqlInit.h	2;"	d
+__WORKQUEUE_H__	workQueue.h	2;"	d
+buf	head.h	/^    char buf[1000];\/\/车厢$/;"	m	struct:__anon3
+capacity	workQueue.h	/^    int capacity;$/;"	m	struct:__anon7
+cdFunc	commandHanle.c	/^int cdFunc(MYSQL *conn,char *userName,char *objPath)$/;"	f
+ciphertext	main.c	/^    char ciphertext[100];$/;"	m	struct:__anon4	file:
+command_t	main.c	/^}command_t;$/;"	t	typeref:struct:__anon5	file:
+commmandToken	head.h	/^enum commmandToken{$/;"	g
+complexInstruct	factory.c	/^void * complexInstruct(void *p)$/;"	f
+cond	factory.h	/^    pthread_cond_t cond;$/;"	m	struct:__anon2
+conn	factory.h	/^MYSQL *conn;$/;"	v
+curPath	main.c	/^    char curPath[256];$/;"	m	struct:__anon4	file:
+dataLen	head.h	/^    int dataLen;\/\/车厢长度$/;"	m	struct:__anon3
+database	mysqlInit.h	/^    char *database;$/;"	m	struct:__anon6
+endFlag	factory.h	/^    int endFlag;$/;"	m	struct:__anon2
+exitThread	factory.c	/^void * exitThread(void *p)$/;"	f
+factory	factory.h	/^factory_t factory;$/;"	v
+factoryClose	factory.c	/^void factoryClose(int signum,siginfo_t *p1,void *p2)$/;"	f
+factoryInit	factory.c	/^void factoryInit(pFactory pf,int pthreadNum,int capacity)$/;"	f
+factoryStart	factory.c	/^void factoryStart(pFactory pf,int flag)$/;"	f
+factory_t	factory.h	/^}factory_t,*pFactory;$/;"	t	typeref:struct:__anon2
+fileCheck	commandHanle.c	/^int fileCheck(MYSQL *conn,char *username,int precode,char *filename,char type)$/;"	f
+fileName	commandHanle.c	/^    char fileName[50];$/;"	m	struct:__anon1	file:
+fileSize	commandHanle.c	/^    long fileSize;$/;"	m	struct:__anon1	file:
+file_t	commandHanle.c	/^}file_t;$/;"	t	typeref:struct:__anon1	file:
+flag	main.c	/^    int flag;$/;"	m	struct:__anon4	file:
+getCode	commandHanle.c	/^int getCode(MYSQL *conn,char *fileName,char *userName,int precode,char type)$/;"	f
+getCurrentCode	commandHanle.c	/^int getCurrentCode(MYSQL *conn,char *path, char *username)$/;"	f
+getSalt	verify.c	/^char *getSalt(MYSQL *conn,const char *username)$/;"	f
+getsFunc	commandHanle.c	/^int getsFunc(MYSQL *conn,int newFd,char *username,char *objPath,char *filename)$/;"	f
+head	workQueue.h	/^    pNode head;$/;"	m	struct:__anon7
+insType	workQueue.h	/^    int insType;$/;"	m	struct:tagNode
+insertSql	mysqlInit.c	/^int insertSql(MYSQL *conn,const char *query)$/;"	f
+instruct	main.c	/^    char instruct[256];$/;"	m	struct:__anon5	file:
+len	main.c	/^    int len;$/;"	m	struct:__anon5	file:
+lock	workQueue.h	/^    pthread_mutex_t lock;$/;"	m	struct:__anon7
+lsFunc	commandHanle.c	/^char * lsFunc(MYSQL *conn,char *username,char *path)$/;"	f
+main	main.c	/^int main(int argc,char *argv[])$/;"	f
+md5	commandHanle.c	/^    char md5[100];$/;"	m	struct:__anon1	file:
+mkdirFunc	commandHanle.c	/^int mkdirFunc(MYSQL *conn,char *userName,char *dirName,char *curPath)$/;"	f
+mvFunc	commandHanle.c	/^int mvFunc(MYSQL *conn,int newFd,char *username,char *curPath)$/;"	f
+mysqlConnInit	mysqlInit.c	/^MYSQL * mysqlConnInit()$/;"	f
+next	workQueue.h	/^    struct tagNode *next;$/;"	m	struct:tagNode	typeref:struct:tagNode::tagNode
+pFactory	factory.h	/^}factory_t,*pFactory;$/;"	t	typeref:struct:__anon2
+pNode	workQueue.h	/^}Node,*pNode;$/;"	t	typeref:struct:tagNode
+pSqlElem	mysqlInit.h	/^}sqlElem,*pSqlElem;$/;"	t	typeref:struct:__anon6
+pUserInf	main.c	/^}userInformation,pUserInf;$/;"	t	typeref:struct:__anon4	file:
+pWorkQueue	workQueue.h	/^}workQueue_t,*pWorkQueue;$/;"	t	typeref:struct:__anon7
+password	mysqlInit.h	/^    char *password;$/;"	m	struct:__anon6
+precode	commandHanle.c	/^    int  precode;$/;"	m	struct:__anon1	file:
+pthid	factory.h	/^    pthread_t *pthid;$/;"	m	struct:__anon2
+pthreadExit	factory.c	/^void pthreadExit(void *p)$/;"	f
+pthreadNum	factory.h	/^    int pthreadNum;$/;"	m	struct:__anon2
+putsFunc	commandHanle.c	/^int putsFunc(MYSQL *conn,int newFd,char *username,char *objPath,char *filename,char *md5,long filesize)$/;"	f
+qFactory	factory.h	/^factory_t qFactory;$/;"	v
+query	mysqlInit.h	/^    char query[200];$/;"	m	struct:__anon6
+queueSize	workQueue.h	/^    int queueSize;$/;"	m	struct:__anon7
+realFileCheck	commandHanle.c	/^int realFileCheck(MYSQL *conn,char *md5,long filesize)$/;"	f
+recvData	recvData.c	/^int recvData(int socketFd,char *p,int len)$/;"	f
+recvFile	recvFile.c	/^int recvFile(int socketFd,char * md5,long filesize)$/;"	f
+recvInfor	main.c	/^int recvInfor(int newFd,MYSQL *conn)$/;"	f
+rmFunc	commandHanle.c	/^int rmFunc(MYSQL *conn,int newFd,char *username,char *curPath)$/;"	f
+salt	main.c	/^    char *salt;$/;"	m	struct:__anon4	file:
+saltGenerate	saltGenerate.c	/^char * saltGenerate()$/;"	f
+selectSql	mysqlInit.c	/^MYSQL_RES * selectSql(MYSQL *conn,const char *query)$/;"	f
+sendData	sendData.c	/^int sendData(int newFd,char *p,int len)$/;"	f
+sendString	main.c	/^void sendString(int newFd,char *str)$/;"	f
+server	mysqlInit.h	/^    char *server;$/;"	m	struct:__anon6
+simpleInstruct	factory.c	/^void * simpleInstruct(void *p)$/;"	f
+sockFd	workQueue.h	/^    int sockFd;$/;"	m	struct:tagNode
+sqlElem	mysqlInit.h	/^}sqlElem,*pSqlElem;$/;"	t	typeref:struct:__anon6
+startFlag	factory.h	/^    int startFlag;$/;"	m	struct:__anon2
+tagNode	workQueue.h	/^typedef struct tagNode{$/;"	s
+tail	workQueue.h	/^    pNode tail;$/;"	m	struct:__anon7
+tcpServerInit	tcpServerInit.c	/^int tcpServerInit(int *sfd, char *ip, char *port)$/;"	f
+token	main.c	/^    char token[100];$/;"	m	struct:__anon4	file:
+tokenGenerate	main.c	/^char * tokenGenerate(MYSQL *conn,char *username)$/;"	f
+train	head.h	/^}train;$/;"	t	typeref:struct:__anon3
+transmitData	transmitData.c	/^int transmitData(int newFd,char *md5,char *filename)$/;"	f
+type	commandHanle.c	/^    char type;$/;"	m	struct:__anon1	file:
+type	main.c	/^    int type;$/;"	m	struct:__anon5	file:
+user	mysqlInit.h	/^    char *user;$/;"	m	struct:__anon6
+userInformation	main.c	/^}userInformation,pUserInf;$/;"	t	typeref:struct:__anon4	file:
+userName	commandHanle.c	/^    char userName[30];$/;"	m	struct:__anon1	file:
+username	main.c	/^    char username[30];$/;"	m	struct:__anon4	file:
+verifyPassword	verify.c	/^int verifyPassword(MYSQL *conn,const char *username,const char *ciphertext)$/;"	f
+verifyPath	verify.c	/^int verifyPath(MYSQL *conn,const char *username,const char *ciphertext)$/;"	f
+verifyToken	verify.c	/^int verifyToken(MYSQL *conn,const char *username,const char *userToken)$/;"	f
+waitNum	factory.h	/^    int waitNum;$/;"	m	struct:__anon2
+workQueue	factory.h	/^    workQueue_t workQueue;$/;"	m	struct:__anon2
+workQueueInit	workQueue.c	/^void workQueueInit(pWorkQueue pwq,int capacity)$/;"	f
+workQueuePop	workQueue.c	/^int workQueuePop(pWorkQueue pwq,pNode *node)$/;"	f
+workQueuePush	workQueue.c	/^int workQueuePush(pWorkQueue pwq,pNode node)$/;"	f
+workQueue_t	workQueue.h	/^}workQueue_t,*pWorkQueue;$/;"	t	typeref:struct:__anon7

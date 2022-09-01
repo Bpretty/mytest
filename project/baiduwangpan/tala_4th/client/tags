@@ -1,0 +1,137 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARGS_CHECK	head.h	33;"	d
+CD	client.c	/^    CD,$/;"	e	enum:commmandToken	file:
+Compute_file_md5	computeMd5.c	/^int Compute_file_md5(const char *file_path, char *md5_str)$/;"	f
+ELF	Makefile	/^ELF:=client$/;"	m
+ERROR_CHECK	head.h	34;"	d
+ERROR_PASSWORD	client.c	/^    ERROR_PASSWORD,$/;"	e	enum:MSG	file:
+ERROR_PATH	client.c	/^    ERROR_PATH,$/;"	e	enum:MSG	file:
+ERROR_USERNAME	client.c	/^    ERROR_USERNAME,$/;"	e	enum:MSG	file:
+EXIT	client.c	/^    EXIT$/;"	e	enum:commmandToken	file:
+F	md5.h	11;"	d
+FF	md5.h	17;"	d
+FILENAME	head.h	37;"	d
+G	md5.h	12;"	d
+GETS	client.c	/^    GETS,$/;"	e	enum:commmandToken	file:
+GG	md5.h	23;"	d
+H	md5.h	13;"	d
+HH	md5.h	29;"	d
+I	md5.h	14;"	d
+II	md5.h	35;"	d
+LS	client.c	/^    LS,$/;"	e	enum:commmandToken	file:
+MD5Decode	md5.c	/^void MD5Decode(unsigned int *output, unsigned char *input, unsigned int len)$/;"	f
+MD5Encode	md5.c	/^void MD5Encode(unsigned char *output,unsigned int *input,unsigned int len)$/;"	f
+MD5Final	md5.c	/^void MD5Final(MD5_CTX *context, unsigned char digest[16])$/;"	f
+MD5Init	md5.c	/^void MD5Init(MD5_CTX *context)$/;"	f
+MD5Transform	md5.c	/^void MD5Transform(unsigned int state[4], unsigned char block[64])$/;"	f
+MD5Update	md5.c	/^void MD5Update(MD5_CTX *context, unsigned char *input, unsigned int inputlen)$/;"	f
+MD5_CTX	md5.h	/^} MD5_CTX;$/;"	t	typeref:struct:__anon7
+MD5_H	md5.h	2;"	d
+MD5_SIZE	head.h	31;"	d
+MD5_STR_LEN	head.h	32;"	d
+MKDIR	client.c	/^    MKDIR,$/;"	e	enum:commmandToken	file:
+MSG	client.c	/^enum MSG{$/;"	g	file:
+MV	client.c	/^    MV,$/;"	e	enum:commmandToken	file:
+NO_SUCH_FILE	client.c	/^    NO_SUCH_FILE$/;"	e	enum:MSG	file:
+Node	commandQueue.h	/^}Node,*pNode;$/;"	t	typeref:struct:tagNode
+OBJS	Makefile	/^OBJS:=$(SRCS:%.c=%.o)$/;"	m
+OPERATE_SUCCESS	client.c	/^    OPERATE_SUCCESS,$/;"	e	enum:MSG	file:
+PADDING	md5.c	/^unsigned char PADDING[] =$/;"	v
+PTHREAD_RET_CHECK	head.h	35;"	d
+PUTS	client.c	/^    PUTS,$/;"	e	enum:commmandToken	file:
+PWD	client.c	/^    PWD,$/;"	e	enum:commmandToken	file:
+READ_DATA_SIZE	head.h	30;"	d
+RM	client.c	/^    RM,$/;"	e	enum:commmandToken	file:
+ROTATE_LEFT	md5.h	15;"	d
+SALTLEN	head.h	38;"	d
+SRCS	Makefile	/^SRCS:=$(wildcard *.c)$/;"	m
+SWAP	head.h	36;"	d
+__COMMANDHANDLE_H__	commandHandle.h	2;"	d
+__COMMANDQUEUE_H__	commandQueue.h	2;"	d
+__HEAD_H__	head.h	2;"	d
+__MYSQLINIT_H__	mysqlInit.h	2;"	d
+addr	client.c	/^    char addr[64];$/;"	m	struct:__anon1	file:
+buf	head.h	/^    char buf[1000];\/\/车厢$/;"	m	struct:__anon5
+buffer	md5.h	/^	unsigned char buffer[64];   $/;"	m	struct:__anon7
+capacity	commandQueue.h	/^    int capacity;$/;"	m	struct:__anon4
+cht	commandHandle.h	/^commandHandleThead_t cht;$/;"	v
+clientInit	client.c	/^int clientInit(int *sockfd ,char* addr,char *port)$/;"	f
+command	commandQueue.h	/^    command_t command;$/;"	m	struct:tagNode
+commandHandleThead_t	commandHandle.h	/^}commandHandleThead_t,*pCommandHandleThread;$/;"	t	typeref:struct:__anon2
+commandQueue	commandHandle.h	/^    commandQueue_t commandQueue;$/;"	m	struct:__anon2
+commandQueueInit	commandQueue.c	/^void commandQueueInit(pCommandQueue pwq,int capacity)$/;"	f
+commandQueuePop	commandQueue.c	/^int commandQueuePop(pCommandQueue pwq,pNode *node)$/;"	f
+commandQueuePush	commandQueue.c	/^int commandQueuePush(pCommandQueue pwq,pNode node)$/;"	f
+commandQueue_t	commandQueue.h	/^}commandQueue_t,*pCommandQueue;$/;"	t	typeref:struct:__anon4
+command_t	commandQueue.h	/^}command_t,pCommand;$/;"	t	typeref:struct:__anon3
+commmandToken	client.c	/^enum commmandToken{$/;"	g	file:
+complexCommand_t	client.c	/^}complexCommand_t;$/;"	t	typeref:struct:__anon1	file:
+cond	commandHandle.h	/^    pthread_cond_t cond;$/;"	m	struct:__anon2
+conmmandCheck	client.c	/^int conmmandCheck(char *c)$/;"	f
+count	md5.h	/^	unsigned int count[2];$/;"	m	struct:__anon7
+curPath	head.h	/^    char curPath[256];$/;"	m	struct:__anon6
+dataLen	head.h	/^    int dataLen;\/\/车厢长度$/;"	m	struct:__anon5
+database	mysqlInit.h	/^    char *database;$/;"	m	struct:__anon8
+downloadFile	client.c	/^int downloadFile(int sfd,char *f,int t)$/;"	f
+exitFlag	commandHandle.h	/^    int exitFlag;$/;"	m	struct:__anon2
+exitFunc	mainPage.c	/^void exitFunc()$/;"	f
+fileName	client.c	/^    char fileName[50];$/;"	m	struct:__anon1	file:
+fileSize	client.c	/^    char fileSize[50];$/;"	m	struct:__anon1	file:
+flag	head.h	/^    int flag;$/;"	m	struct:__anon6
+getFileName	client.c	/^char * getFileName(const char *str)$/;"	f
+getPath	client.c	/^int getPath(char *str[])$/;"	f
+head	commandQueue.h	/^    pNode head;$/;"	m	struct:__anon4
+ins	client.c	/^    command_t ins;$/;"	m	struct:__anon1	file:
+insertSql	mysqlInit.c	/^void insertSql(MYSQL *conn,const char *query)$/;"	f
+instruct	commandQueue.h	/^    char instruct[128];$/;"	m	struct:__anon3
+len	commandQueue.h	/^    int len;$/;"	m	struct:__anon3
+lock	commandQueue.h	/^    pthread_mutex_t lock;$/;"	m	struct:__anon4
+logInFunc	mainPage.c	/^void logInFunc()$/;"	f
+main	client.c	/^int main(int argc,char *argv[3])$/;"	f
+menu	mainPage.c	/^void menu()$/;"	f
+mysqlConnInit	mysqlInit.c	/^MYSQL * mysqlConnInit()$/;"	f
+next	commandQueue.h	/^    struct tagNode *next;$/;"	m	struct:tagNode	typeref:struct:tagNode::tagNode
+pCommand	commandQueue.h	/^}command_t,pCommand;$/;"	t	typeref:struct:__anon3
+pCommandHandleThread	commandHandle.h	/^}commandHandleThead_t,*pCommandHandleThread;$/;"	t	typeref:struct:__anon2
+pCommandQueue	commandQueue.h	/^}commandQueue_t,*pCommandQueue;$/;"	t	typeref:struct:__anon4
+pNode	commandQueue.h	/^}Node,*pNode;$/;"	t	typeref:struct:tagNode
+pSqlElem	mysqlInit.h	/^}sqlElem,*pSqlElem;$/;"	t	typeref:struct:__anon8
+pTmpInf	head.h	/^}tmpInformation,*pTmpInf;$/;"	t	typeref:struct:__anon6
+passwd	head.h	/^    char passwd[30];$/;"	m	struct:__anon6
+password	mysqlInit.h	/^    char *password;$/;"	m	struct:__anon8
+pathCheck	client.c	/^int pathCheck(const char *path)$/;"	f
+port	client.c	/^    char port[32];$/;"	m	struct:__anon1	file:
+pthid	commandHandle.h	/^    pthread_t *pthid;$/;"	m	struct:__anon2
+pthreadFunc	client.c	/^void * pthreadFunc(void *p)$/;"	f
+pthreadInit	client.c	/^void pthreadInit(complexCommand_t *c)$/;"	f
+query	mysqlInit.h	/^    char query[200];$/;"	m	struct:__anon8
+queueSize	commandQueue.h	/^    int queueSize;$/;"	m	struct:__anon4
+recvData	recvData.c	/^int recvData(int socketFd,char *p,int len)$/;"	f
+recvFile	recvFile.c	/^int recvFile(int socketFd,char * filename,long filesize)$/;"	f
+registerFunc	mainPage.c	/^void registerFunc()$/;"	f
+saltGenerate	saltGenerate.c	/^char * saltGenerate()$/;"	f
+selectSql	mysqlInit.c	/^MYSQL_RES * selectSql(MYSQL *conn,const char *query)$/;"	f
+sendCommand	client.c	/^int sendCommand(int newFd,command_t ins)$/;"	f
+sendData	sendData.c	/^int sendData(int newFd,char *p,int len)$/;"	f
+sendInfor	client.c	/^int sendInfor(int newFd)$/;"	f
+sendString	client.c	/^void sendString(int newFd,char *str)$/;"	f
+server	mysqlInit.h	/^    char *server;$/;"	m	struct:__anon8
+sqlElem	mysqlInit.h	/^}sqlElem,*pSqlElem;$/;"	t	typeref:struct:__anon8
+state	md5.h	/^	unsigned int state[4];$/;"	m	struct:__anon7
+tagNode	commandQueue.h	/^typedef struct tagNode{$/;"	s
+tail	commandQueue.h	/^    pNode tail;$/;"	m	struct:__anon4
+tmpInf	head.h	/^tmpInformation tmpInf;$/;"	v
+tmpInformation	head.h	/^}tmpInformation,*pTmpInf;$/;"	t	typeref:struct:__anon6
+tmpInformationInit	client.c	/^void tmpInformationInit()$/;"	f
+token	head.h	/^    char token[100];$/;"	m	struct:__anon6
+train	head.h	/^}train;$/;"	t	typeref:struct:__anon5
+transmitFile	transmitData.c	/^int transmitFile(int newFd,char *filename,char *m)$/;"	f
+type	commandQueue.h	/^    int type;$/;"	m	struct:__anon3
+uploadFile	client.c	/^int uploadFile(int sfd,char *f,int t)$/;"	f
+user	mysqlInit.h	/^    char *user;$/;"	m	struct:__anon8
+username	head.h	/^    char username[30];$/;"	m	struct:__anon6
