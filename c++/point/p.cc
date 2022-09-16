@@ -17,9 +17,18 @@ void t1()
     cout<< sizeof(s1)<<endl;
 }
 
+void t2()
+{
+    //cout<< nullptr<<endl; //erro
+    
+    cout<< NULL <<endl;
+}
+
 int main()
 {
-    t1();
+    //t1();
+
+    t2();
 
     return 0;
 }
