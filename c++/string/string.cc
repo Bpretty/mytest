@@ -12,7 +12,7 @@ public:
         cout << "String()"<<endl;
     }
 
-    String( char* p )
+    String(const char* p )
     :_pStr( new char[strlen(p) + 1]())
     {
         strcpy( _pStr, p );
@@ -37,6 +37,8 @@ public:
         delete[] _pStr;
         _pStr = new char[strlen( str._pStr ) + 1]();
         strcpy( _pStr, str._pStr );
+
+        return *this;
     }
 
     ~String()
@@ -58,6 +60,8 @@ private:
 ostream& operator<<( ostream& os, const String& str)
 {
     cout<< str._pStr <<endl;
+
+    return os;
 }
 
 
