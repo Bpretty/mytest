@@ -1,0 +1,99 @@
+#include "container.h"
+
+class Data
+{
+public:
+    Data(int a=0,int b=0)
+    :_a(a)
+    {
+        //cout<< "Data()"<< " "<< _a<<endl;
+    }
+
+    friend class Less;
+    friend bool operator <(const Data&, const Data&);
+    friend bool operator >(const Data&, const Data&);
+    friend ostream& operator <<(ostream& os, const Data& data);
+private:
+    int _a;
+};
+
+#if 1
+bool operator <(const Data& left, const Data& right)
+{
+    cout<< "重载，比较结果是"<< (right._a < right._a) <<endl;
+    return right._a < right._a;
+}
+#endif
+
+ostream& operator <<(ostream& os, const Data& data)
+{
+    os<< data._a<< "。。。" << endl;
+    return os;
+}
+
+//struct Less
+//{
+//    bool operator()(const Data& a, const Data& b)
+//    {
+//        if(a._b != b._b)   return a._b > b._b;
+//
+//        return a._a > b._a;
+//    }
+//};
+
+//void test2()
+//{
+//    map<int,Data, Less> m;
+//
+//    for(int i = 0;i< 10;i++)
+//    {
+//        auto rst = m.insert( std::make_pair(i, Data(i,i*10)) );
+//    }
+//
+//    cout<< "size = "<<m.size() << endl;
+//
+//    auto beg = m.begin();
+//    for(auto beg = m.begin(); beg != m.end(); beg++)
+//    {
+//        auto item = *beg;
+//        cout<< item.first << "->"<< item.second <<endl;
+//
+//        cout<< 1111 <<endl;
+//    }
+//}
+
+void test3()
+{
+    map<Data, int> m;
+
+    int i = 10;
+    auto obj = Data(i, i*10);
+    auto rst = m.insert( std::make_pair( obj, i ) );
+    cout<< (*(rst.first)).first<<endl;
+    cout<< i<<"结果是："<<rst.second <<endl;
+
+    i = 20;
+    obj = Data(i, i*10);
+    cout<< obj<<endl;
+    rst = m.insert( std::make_pair( obj, i ) );
+    cout<< i <<"结果是："<<rst.second <<endl;
+
+    i = 30;
+    obj = Data(i, i*10);
+    cout<< obj<<endl;
+    rst = m.insert( std::make_pair( obj, i ) );
+    cout<< i <<"结果是："<<rst.second <<endl;
+
+}
+
+int main()
+{
+    //test();
+
+    //test2();
+
+    test3();
+
+    return 0;
+}
+

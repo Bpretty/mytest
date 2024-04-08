@@ -6,11 +6,12 @@ void t()
     int a = 1;
     int b = 2;
 
-    int a1 = a^a;
-    int b1 = b^b;
+    a = a^b;
+    b = a^b;
+    a = a^b;
 
-    cout << a1 <<endl;
-    cout << b1 <<endl;
+    cout << a <<endl;
+    cout << b <<endl;
 }
 
 int main()

@@ -29,7 +29,7 @@ public:
         cout<< "Vector(const T& arr)"<<endl;
 
         _arr = new T[arr._capacity]();
-        memcpy( _arr, arr._arr, sizeof(arr._capacity * sizeof(T)) );
+        memcpy( _arr, arr._arr, arr._capacity * sizeof(T) );
         _capacity = arr._capacity;
         _size = arr._size;
     }
@@ -40,7 +40,7 @@ public:
 
         delete[] _arr;
         _arr = new T[other._arr]();
-        memcpy( _arr, other._arr, sizeof(sizeof(T)*other._arr) );
+        memcpy( _arr, other._arr, sizeof(T)*other._arr );
         _capacity = other._capacity;
         _size = other._size;
 

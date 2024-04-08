@@ -60,13 +60,31 @@ void t5()
     cout<< a*-2 <<endl;
 }
 
+class Test
+{
+public:
+#if 0
+    Test(int a)
+    {}
+#endif
+
+};
+
+void t6()
+{
+    Test t[10];
+    cout<< sizeof(t)<<endl;
+}
+
+
 int main()
 {
     //t1();
     //t2();
     //t3();
     //t4();
-    t5();
+    //t5();
+    t6();
 
     return 0;
 }
