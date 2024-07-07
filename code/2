@@ -1,0 +1,109 @@
+#include <iostream>
+#include <set>
+#include <map>
+#include <string>
+using namespace std;
+
+template <class  T>
+void display(const T& c)
+{
+    typename T::const_iterator it = c.begin();
+    while(it != c.end())
+    {
+        cout<< *it<<endl;
+        ++it;
+    }
+}
+
+class Test
+{
+    friend bool operator<(const Test& t, const Test& other);
+    friend ostream& operator<<(ostream& os, const Test& t);
+public:
+    Test(int a = 0)
+    :_a(a)
+    {
+    }
+
+    ~Test()
+    {
+    }
+private:
+    int _a;
+};
+
+bool operator<(const Test& t, const Test& other)
+{
+    return t._a < other._a;
+}
+
+bool operator>(const Test& t, const Test& other)
+{
+    return t._a > other._a;
+}
+
+ostream& operator<<(ostream& os, const Test& t)
+{
+    os<< "_a = " << t._a << endl;
+
+    return os;
+}
+
+//set测试
+void t1()
+{
+    //默认按照升序排序,内部存放元素不同
+
+    //初始化1，使用大括号
+#if 0
+    set<int> numbers{5,4,3,2,1};
+    display(numbers);
+#endif
+
+    //初始化2，使用迭代器范围内元素
+#if 1
+    int arr[] = {5,4,3,2,1};
+    //set<int> numbers(arr, arr+5);
+    set<int, std::greater<int>> numbers(arr, arr+5);
+    display(numbers);
+#endif
+
+    //查找
+    //1.使用count
+    int one = 10;
+    printf("元素出现的次数为：%ld\n", numbers.count(one));
+    //2.使用find
+    set<int>::iterator it = numbers.find(one);
+    if(it != numbers.end())
+        cout<< "找到了" <<endl;
+    else
+        cout<< "没找到" <<endl;
+
+    //添加元素
+    std::pair<set<int>::iterator, bool> ret = numbers.insert(1);
+    if(ret.second)
+        cout<< "添加元素成功"<<endl;
+    else
+        cout<< "添加元素失败"<<endl;
+}
+
+void t11()
+{
+    set<Test, std:greater<Test>> numbers{5,4,3,2,1};
+    display(numbers);
+
+}
+
+void t2()
+{
+
+}
+
+int main()
+{
+    t1();
+    //t11();
+
+    return 0;
+}
+
